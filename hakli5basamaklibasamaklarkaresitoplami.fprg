@@ -1,0 +1,68 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="17"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2019-10-23 02:11:47 &#214;S"/>
+        <attribute name="created" value="MTc7IFBDMTc7IDIwMTktMTAtMTY7IDEwOjM5OjM4IDsgMTU4Mg=="/>
+        <attribute name="edited" value="MTc7IFBDMTc7IDIwMTktMTAtMTY7IDExOjQyOjUyIDsgMTU3Mw=="/>
+        <attribute name="edited" value="cmJhdHU7RkxBVENIRUw7MjAxOS0xMC0yMzswMjoxMTo0NyDDllM7MTsyNjQ2"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <comment text="Girilen 5 basamakl&#305; pozitif bir say&#305;n&#305;n basamaklar&#305;n&#305;n karelerinin toplam&#305;n&#305; hesaplatt&#305;ran ve negatif veya 5'ten farkli basamak girildiginde uyari mesaji veren ve 5 basamakl&#305; sayi girilmesi icin 5 hak taniyan algoritma."/>
+            <declare name="sayi, birler, onlar, yuzler, binler, onbinler, uzunluk, hak" type="Integer" array="False" size=""/>
+            <assign variable="uzunluk" expression="0"/>
+            <assign variable="hak" expression="5"/>
+            <output expression="&quot;5 hakkiniz vardir.&quot;" newline="True"/>
+            <while expression="uzunluk!=5 &amp;&amp; hak!=0">
+                <output expression="&quot;Lutfen 5 basamakli pozitif bir tam sayi giriniz.&quot;" newline="True"/>
+                <input variable="sayi"/>
+                <if expression="sayi&gt;=0">
+                    <then>
+                        <assign variable="uzunluk" expression="Len(ToString(sayi))"/>
+                        <if expression="uzunluk!=5">
+                            <then>
+                                <output expression="&quot;5 basamaktan farkli basamak degerine sahip bir sayi girdiniz.&quot;" newline="True"/>
+                                <assign variable="hak" expression="hak-1"/>
+                                <if expression="hak&gt;0">
+                                    <then>
+                                        <output expression="hak&amp;&quot; hakkiniz kaldi.&quot;" newline="True"/>
+                                    </then>
+                                    <else/>
+                                </if>
+                            </then>
+                            <else>
+                                <assign variable="birler" expression="sayi%10"/>
+                                <assign variable="onlar" expression="(sayi/10)%10"/>
+                                <assign variable="yuzler" expression="(sayi/100)%10"/>
+                                <assign variable="binler" expression="(sayi/1000)%10"/>
+                                <assign variable="onbinler" expression="sayi/10000"/>
+                            </else>
+                        </if>
+                    </then>
+                    <else>
+                        <output expression="&quot;Lutfen negatif tam sayi girmeyiniz.&quot;" newline="True"/>
+                        <assign variable="hak" expression="hak-1"/>
+                        <if expression="hak&gt;0">
+                            <then>
+                                <output expression="hak&amp;&quot; hakkiniz kaldi.&quot;" newline="True"/>
+                            </then>
+                            <else/>
+                        </if>
+                    </else>
+                </if>
+            </while>
+            <if expression="hak&gt;0">
+                <then>
+                    <output expression="&quot;Girmis oldugunuz &quot;&amp;sayi&amp;&quot; sayisinin basamaklarinin karelerinin toplami: &quot;&amp;birler^2+onlar^2+yuzler^2+binler^2+onbinler^2" newline="True"/>
+                </then>
+                <else>
+                    <output expression="&quot;Hakkiniz doldu.&quot;" newline="True"/>
+                </else>
+            </if>
+        </body>
+    </function>
+</flowgorithm>

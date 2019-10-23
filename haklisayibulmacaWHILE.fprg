@@ -1,0 +1,66 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="rbatu"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2019-10-23 02:14:45 &#214;S"/>
+        <attribute name="created" value="cmJhdHU7RkxBVENIRUw7MjAxOS0xMC0wOTswNzo1NToyNCDDlsOWOzI2ODE="/>
+        <attribute name="edited" value="cmJhdHU7RkxBVENIRUw7MjAxOS0xMC0yMzswMjoxNDo0NSDDllM7NTsyNjUx"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="s, r, t, h" type="Integer" array="False" size=""/>
+            <declare name="b" type="String" array="False" size=""/>
+            <declare name="n" type="String" array="False" size=""/>
+            <declare name="evet" type="String" array="False" size=""/>
+            <assign variable="evet" expression="&quot;hayir&quot;"/>
+            <assign variable="s" expression="1"/>
+            <assign variable="r" expression="0"/>
+            <assign variable="t" expression="0"/>
+            <assign variable="h" expression="9"/>
+            <assign variable="r" expression="Random(100)"/>
+            <output expression="r" newline="True"/>
+            <output expression="&quot;Toplam 10 hakk&#305;n&#305;z vard&#305;r.&quot;" newline="True"/>
+            <output expression="&quot;Tahmininizi giriniz.&quot;" newline="True"/>
+            <input variable="t"/>
+            <while expression="t!=r">
+                <output expression="h&amp;&quot; hakkiniz kaldi.&quot;" newline="True"/>
+                <if expression="t&lt;r">
+                    <then>
+                        <output expression="&quot;Daha b&#252;y&#252;k bir say&#305; giriniz.&quot;" newline="True"/>
+                    </then>
+                    <else>
+                        <output expression="&quot;Daha k&#252;&#231;&#252;k bir say&#305; giriniz.&quot;" newline="True"/>
+                    </else>
+                </if>
+                <input variable="t"/>
+                <assign variable="s" expression="s+1"/>
+                <assign variable="h" expression="h-1"/>
+                <if expression="h&gt;0">
+                    <then/>
+                    <else>
+                        <output expression="&quot;Haklarinizin hepsini kullandiniz.&quot;" newline="True"/>
+                        <assign variable="t" expression="r"/>
+                    </else>
+                </if>
+            </while>
+            <if expression="h&gt;0">
+                <then>
+                    <output expression="s&amp;&quot; seferde &quot;&amp;r&amp;&quot; say&#305;s&#305;n&#305; bildiniz.&quot;" newline="True"/>
+                </then>
+                <else>
+                    <output expression="&quot;Tekrar denemek istiyorsan&#305;z bu mesaja evet, istemiyorsan&#305;z hayir cevab&#305;n&#305; verin.&quot;" newline="True"/>
+                    <input variable="b"/>
+                    <if expression="b=&quot;evet&quot;">
+                        <then>
+                            <call expression="main"/>
+                        </then>
+                        <else/>
+                    </if>
+                </else>
+            </if>
+        </body>
+    </function>
+</flowgorithm>

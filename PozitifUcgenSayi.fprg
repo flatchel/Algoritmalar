@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="17"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2019-10-23 02:14:06 &#214;S"/>
+        <attribute name="created" value="MTc7IFBDMTc7IDIwMTktMTAtMjM7IDExOjAxOjU2IDsgMTU3MA=="/>
+        <attribute name="edited" value="MTc7IFBDMTc7IDIwMTktMTAtMjM7IDExOjI5OjM4IDsgMTU4MA=="/>
+        <attribute name="edited" value="cmJhdHU7RkxBVENIRUw7MjAxOS0xMC0yMzswMjoxNDowNiDDllM7MTsyNjQ0"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <comment text="Girilen pozitif sayinin ucgen sayi olup olmadigini belirten ve negatif sayi girilmesi durumunda yeniden sayi girilmesini isteyen algoritma."/>
+            <declare name="sayi, n" type="Integer" array="False" size=""/>
+            <assign variable="n" expression="1"/>
+            <assign variable="sayi" expression="0"/>
+            <while expression="sayi&lt;=0">
+                <output expression="&quot;Pozitif tam sayi giriniz.&quot;" newline="True"/>
+                <input variable="sayi"/>
+            </while>
+            <while expression="sayi!=(n*(n+1)/2) &amp;&amp; sayi&gt;n">
+                <assign variable="n" expression="n+1"/>
+            </while>
+            <if expression="sayi!=(n*(n+1)/2)">
+                <then>
+                    <output expression="sayi&amp;&quot; sayisi ucgen sayi degildir.&quot;" newline="True"/>
+                </then>
+                <else>
+                    <output expression="sayi&amp;&quot; sayisi ucgen sayidir.&quot;" newline="True"/>
+                </else>
+            </if>
+        </body>
+    </function>
+</flowgorithm>
